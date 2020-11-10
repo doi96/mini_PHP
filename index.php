@@ -49,7 +49,7 @@
         }
 
         // select all data
-        $query = "SELECT id, name, description, price FROM products ORDER BY id DESC";
+        $query = "SELECT id, name, description, price,status FROM products ORDER BY id DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
 
@@ -70,6 +70,7 @@
             echo "<th>Name</th>";
             echo "<th>Description</th>";
             echo "<th>Price</th>";
+            echo "<th>Status</th>";
             echo "<th>Action</th>";
             echo "</tr>";
 
@@ -83,6 +84,7 @@
                 echo "<td>{$name}</td>";
                 echo "<td>{$description}</td>";
                 echo "<td>{$price}</td>";
+                echo "<td>{$status}</td>";
                 echo "<td>";
                 // read one record 
                 echo "<a href='read_one.php?id={$id}' class='btn btn-info m-r-1em'>Read</a>";
@@ -95,7 +97,7 @@
                 echo "</td>";
                 echo "</tr>";
             }
-
+            
             // end table
             echo "</table>";
         }

@@ -6,7 +6,7 @@ $username = "root";
 $password = "";
 
 try {
-    $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+    $con = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
 }
 
 // show error
